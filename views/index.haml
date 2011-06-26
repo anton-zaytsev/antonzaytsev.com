@@ -1,0 +1,151 @@
+-#<?php
+-#
+-#	session_start();
+-#
+-#	$debug = 0;
+-#
+-#	ini_set('display_errors', 0);
+-#	error_reporting(0);
+-#
+-#	if ($debug) {
+-#		ini_set('display_errors', 1);
+-#		error_reporting(E_ALL & ~E_NOTICE);
+-#	}
+-#
+-#	$langs = array('en', 'ru');
+-#	if ($_GET['lang'] && array_search($_GET['lang'], $langs) !== false) {
+-#		$_SESSION['lang'] = $_GET['lang'];
+-#		header('location: /');
+-#		exit;
+-#	}
+-#
+-#	if (empty($_SESSION['lang'])) $_SESSION['lang'] = 'ru';
+-#	$language = $_SESSION['lang'];
+-#
+-#    $what = array(
+-#	'ru' =>
+-#        '<ul>
+-#            <li>Инструменты: NetBeans IDE, Balsamiq</li>
+-#            <li>Saas: Basecamp, Redmine</li>
+-#            <li>Методологии: Agile, Scrum</li>
+-#            <li>Серверный код: PHP(CakePHP), Ruby(Ruby on Rails, Sinatra)</li>
+-#            <li>Клиентский код: jQuery, jQuery UI, pure JS</li>
+-#            <li>CMS: Drupal, Wordpress, 1C-Bitrix, ExpressionEngine</li>
+-#         </ul>',
+-#		'en' => '',
+-#	);
+-#
+-#    $about = array(
+-#	'ru' =>
+-#        'Я <a href="#/work">веб-разработчик</a>. Профессинально занимаюсь веб-разработкой с августа 2010 года.
+-#Начинал я <a href="http://adciserver.com" rel="nofollow">тут</a>, сейчас работаю <a rel="nofollow" href="http://a2design.biz">тут</a>. Люблю свою девушку, брата, работу и двух пушистих мяукающих комочка счастья.',
+-#	'en' => '',
+-#	);
+-#
+-#
+-#
+-#	$projects = array(
+-#		'ru' =>
+-#			'<h3>Проекты в которых я учавствовал</h3>
+-#			<ul>
+-#				<li><a class="bold" href="http://parkingchoice.com.au">parkingchoice.com.au</a><br/><span class="info">Верстка макета, разработка функционала заказа парковки. Технологии: CSS, JavaScript, jQuery, PHP, Drupal 6</span></li>
+-#				<li><a class="bold" href="http://molnia12.ru">molnia12.ru</a><br/><span class="info">Верстка макета. Разработка сайта. Технологии: CSS, JavaScript, jQuery, PHP, 1C-Bitrix</span></li>
+-#				<li><a class="bold" href="http://ufsin.omsk.ru">ufsin.omsk.ru</a><br/><span class="info">Верстка макета. Разработка сайта. Технологии: CSS, JavaScript, jQuery, PHP, 1C-Bitrix</span></li>
+-#				<li><a class="bold" href="http://wrp.me">wrp.me</a><br/><span class="info">Верстка макета. Технологии: CSS, JavaScript, jQuery</span></li>
+-#				<li><a class="bold" href="http://saltwaterinsurance.com/">saltwaterinsurance.com</a><br/><span class="info">Верстка, разработка функционала. Технологии: CSS, JavaScript, jQuery, PHP, WordPress 3</span></li>
+-#			</ul>',
+-#		'en' => '',
+-#	);
+-#
+-#	$url = $_GET['url'];
+-#
+-#	$content = '';
+-#
+-#    if ($_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest') {
+-#        $page = $_REQUEST['page'];
+-#        $data = ${$page}[$language];
+-#        header('Content-type: text/json');
+-#        header('Content-type: application/json');
+-#        exit(json_encode(array('data' => $data)));
+-#    }
+-#	elseif($url && !empty(${$url})){
+-#		$content = ${$url}[$language];
+-#	}
+-#
+-#
+-#?>
+!!! 5
+%html
+  %head
+    %title Designing and developing web applications, website development | Anton Zaycev | antonzaycev.ru
+    %meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    %meta{ :name => 'description', :content => 'Nice web developer' }
+    %meta{ :name => 'keywords',    :content => 'Антон Зайцев, php, js, css, ruby, rubyonrails, омск, Anton Zaycev, Anton Zaytsev, rails, development, freelance' }
+    %link{ :rel => 'stylesheet',:type => 'text/css', :href => '/css/style.css' }
+
+  %body
+    #background
+      %img{ :src => '/img/bg.jpg', :alt => '' }
+    #page
+      %header
+        .inner
+          #logo{ :href=> "/" }
+            Hello, my name is <span class="name">Anton Zaytsev</span>
+            %br
+            I do web development, and I love it!
+            %br
+            %br
+            Please feel free to contact with me <br/>
+            via <a g0="gmail" g10=".com" g1="@" g3="anton" g9="zaycev55" href="mailto:" class="email" >email</a>,
+            %a{ :href => 'skypeto:antonzaycev' } skype
+            or
+            %a{ :href => 'http://twitter.com/antonzaycev', :target => '_blank' } twitter
+
+      -#%section
+      -#  .inner
+      -#    .corner
+      -#    .mainblock
+      -#      .column.first
+      -#        %h2.about
+      -#          about
+      -#        I'm 22 years old and I'm working as a web developer. Welcome to my online showcase, the purpose of which is to focus on the commercial work I've undertaken via design for identity and web.
+      -#        %br
+      -#        %br
+      -#        %span.dark
+      -#          I work for <a title="kuhnert GmbH Official Website" class="content" onfocus="blur(this);" onclick="window.open(this.href); return false;" href="http://www.kuhnert.com">kuhnert GmbH</a>, an interactive agency based in Kempten (Germany).
+      -#
+      -#      .column.second
+      -#        %h2.skills
+      -#          skills
+      -#        During my work I gained widespread and profound knowledge in Photoshop/Illustrator, XHTML &amp; CSS (hand coded) web design, tableless web design, frontend site development, creation and refreshing of logos and corporate identities.
+      -#        %br
+      -#        %br
+      -#        %span.dark
+      -#          If you're interested, please do not hesitate to <a title="contact me" class="content" onfocus="blur(this);" onclick="window.open(this.href); return false;" href="mailto:supavizor@gmx.de">contact me</a>!
+      -#
+      -#      .column.third
+      -#        %h2.work
+      -#          work
+      -#        #gallery
+      -#          .galleryCollection
+            
+
+      %footer
+        %a{ :href => 'http://twitter.com/antonzaycev', :class => 'twi external' }
+
+    -#%script{ :src => 'js/jquery.js', :type => "text/javascript" }
+    %script{ :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js', :type => "text/javascript" }
+    -#%script{ :src => 'js/jquery.hashchange.js', :type => "text/javascript" }
+    %script{ :src => 'js/scripts.js', :type => "text/javascript" }
+    %script{ :src => "http://html5shim.googlecode.com/svn/trunk/html5.js", :type => "text/javascript" }
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20607144-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
