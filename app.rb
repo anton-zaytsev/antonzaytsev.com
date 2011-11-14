@@ -5,6 +5,8 @@ require 'sinatra'
 require 'haml'
 require 'sass'
 
+APP_ROOT = File.dirname(File.expand_path(__FILE__))
+
 class App < Sinatra::Base
   not_found do
     haml :error
