@@ -9,11 +9,6 @@ use Rack::Rewrite do
   }
 end
 
+require './app'
 
-require 'rubygems'
-require 'sinatra'
-require 'haml'
-require 'sass'
-require 'antonzaycev'
-
-run Sinatra::Application
+run App
