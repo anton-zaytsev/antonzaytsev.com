@@ -1,6 +1,6 @@
 require 'rack-rewrite'
 
-DOMAIN = 'antonzaycev.ru'
+DOMAIN = 'antonzaytsev.com'
 
 # Redirect to the www version of the domain in production
 use Rack::Rewrite do

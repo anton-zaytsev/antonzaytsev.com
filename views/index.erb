@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+<head>
+  <title>Just a good guy | Anton Zaytsev</title>
+  <meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
+  <meta name='description' content='Web developer from Omsk' />
+  <meta name='keywords' content='Антон Зайцев, Anton Zaycev, Anton Zaytsev, php, js, css, ruby, rails, rubyonrails, омск, development, freelance' />
+
+  <link rel='stylesheet' type='text/css' href='/css/style.css' />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/scripts.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.center.js"></script>-->
+  <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+</head>
+
+<body>
+  <div id="background">
+    <img src='/img/bg.jpg' alt='' />
+  </div>
+
+  <div id="page">
+    <header>
+      <div class="inner">
+        <div id="main-text">
+          <%= erb :"lang-#{@lang}" %>
+        </div>
+      </div>
+    </header>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20607144-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+  </div>
+</body>
+</html>
