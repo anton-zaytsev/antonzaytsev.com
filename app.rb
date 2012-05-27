@@ -11,7 +11,8 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    matches = request.env['REQUEST_URI'].match /\/\/(.*)\.(\w{2,3})/
+    matches = request.env['HTTP_HOST'].match /(.*)\.(\w{2,3})/
+
     @lang =
       case matches && matches[2] || request.params['lang']
         when 'com'
