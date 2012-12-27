@@ -9,6 +9,7 @@ end
 require 'rubygems'
 require 'sinatra'
 require 'sass'
+require 'pry'
 require './app'
 
 run App

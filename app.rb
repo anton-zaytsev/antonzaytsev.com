@@ -2,6 +2,26 @@
 APP_ROOT = File.dirname(File.expand_path(__FILE__))
 
 class App < Sinatra::Base
+
+  #helpers do
+  #  def get_lang
+  #    languages = []
+  #
+  #    unless request.env['HTTP_ACCEPT_LANGUAGE']
+  #      return ['en']
+  #    end
+  #
+  #    hal = request.env['HTTP_ACCEPT_LANGUAGE']
+  #    hal = hal.split(',')
+  #    hal.each do |l|
+  #      lang, priority = l.split(';')
+  #      languages << lang
+  #    end
+  #
+  #    languages
+  #  end
+  #end
+
   not_found do
     redirect '/'
   end
