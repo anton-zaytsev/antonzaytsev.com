@@ -1,8 +1,4 @@
 # encoding: utf-8
-require 'rubygems'
-require 'sinatra'
-require 'sass'
-
 APP_ROOT = File.dirname(File.expand_path(__FILE__))
 
 class App < Sinatra::Base

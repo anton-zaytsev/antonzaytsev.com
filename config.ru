@@ -6,6 +6,9 @@ use Rack::Rewrite do
      :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] =~ /www\./i }
 end
 
+require 'rubygems'
+require 'sinatra'
+require 'sass'
 require './app'
 
 run App
