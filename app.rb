@@ -3,6 +3,10 @@ APP_ROOT = File.dirname(File.expand_path(__FILE__))
 
 class App < Sinatra::Base
 
+  configure do
+    set :server, :puma
+  end
+
   #helpers do
   #  def get_lang
   #    languages = []
@@ -29,13 +33,15 @@ class App < Sinatra::Base
   get '/' do
     matches = request.env['HTTP_HOST'].match /(.*)\.(\w{2,3})/
 
+    #binding.pry
+
     @lang =
       case matches && matches[2] || request.params['lang']
         when 'com'
           'eng'
-        when 'ru'
-          'ru'
-        else 'eng'
+        #when 'ru'
+        #  'ru'
+        else 'ru'
       end
 
     erb :index
