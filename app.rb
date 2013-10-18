@@ -3,9 +3,9 @@ APP_ROOT = File.dirname(File.expand_path(__FILE__))
 
 class App < Sinatra::Base
 
-  configure do
-    set :server, :puma
-  end
+  #configure do
+  #  set :server, :puma
+  #end
 
   #helpers do
   #  def get_lang
@@ -30,17 +30,28 @@ class App < Sinatra::Base
     redirect '/'
   end
 
+  helpers do
+
+    def link_to(text, url, opts={})
+      attributes = ""
+      opts.each { |key,value| attributes << key.to_s << "=\"" << value << "\" "}
+      "<a href=\"#{url}\" #{attributes}>#{text}</a>"
+    end
+
+    def mail_to email, text=nil, attributes={}
+      link_to "#{text || email}", "mailto:#{email}", attributes
+    end
+  end
+
   get '/' do
     matches = request.env['HTTP_HOST'].match /(.*)\.(\w{2,3})/
-
-    #binding.pry
 
     @lang =
       case matches && matches[2] || request.params['lang']
         when 'com'
           'eng'
-        #when 'ru'
-        #  'ru'
+        when 'ru'
+          'ru'
         else 'ru'
       end
 

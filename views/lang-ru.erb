@@ -6,9 +6,9 @@
 <br>
 <br>
 Вы можете связаться со мной <br>
-с помощью <a g0="antonzaytsev" g10=".com" g1="@" g3="info" g9="" href="mailto:info@antonzaytsev.com" class="email">email</a>,
-<a href="skypeto:antonzaycev">skype</a>
-или
-<a href="http://twitter.com/antonzaycev" target="_blank">twitter</a>.
+с помощью <%= mail_to 'me@antonzaytsev.com', 'email' %>, <%= link_to 'skype', 'skype:antonzaycev?call' %>
+или <%= link_to 'twitter', 'https://twitter.com/antonzaycev', target: '_blank' %>.
 <br>
-Так же вы можете посетить <a href="http://blog.antonzaytsev.com" target="_blank">мой блог</a>.
+Так же можете взглянуть на мой аккаунт на гитхабе <%= link_to 'github', 'http://github.com/antonzaytsev', target: '_blank' %>.
+<br>
+Так же вы можете посетить <%= link_to 'мой блог', 'http://blog.antonzaytsev.com', target: "_blank" %>.

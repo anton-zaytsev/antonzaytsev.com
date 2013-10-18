@@ -6,10 +6,6 @@ window.log = console.log;
 
   $(function(){
 
-    var email = $('.email');
-    var new_href = email[0].href + email.attr('g3') + email.attr('g9') + email.attr('g1') + email.attr('g0') + email.attr('g10');
-    email.attr('href', new_href);
-
     var page = $('#page');
     var bg = $("#background");
     var bg_img = $('img', bg);
